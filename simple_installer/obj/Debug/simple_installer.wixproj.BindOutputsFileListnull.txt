@@ -1,0 +1,3 @@
+D:\wix_project\simple_installer\simple_installer\bin\Debug\cab1.cab
+D:\wix_project\simple_installer\simple_installer\bin\Debug\simple_installer.msi
+D:\wix_project\simple_installer\simple_installer\bin\Debug\simple_installer.wixpdb

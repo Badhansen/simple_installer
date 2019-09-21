@@ -1,0 +1,7 @@
+obj\Debug\Product.wixobj
+D:\wix_project\simple_installer\simple_installer\bin\Debug\cab1.cab
+D:\wix_project\simple_installer\simple_installer\bin\Debug\simple_installer.msi
+D:\wix_project\simple_installer\simple_installer\bin\Debug\simple_installer.wixpdb
+obj\Debug\simple_installer.wixproj.BindContentsFileListnull.txt
+obj\Debug\simple_installer.wixproj.BindOutputsFileListnull.txt
+obj\Debug\simple_installer.wixproj.BindBuiltOutputsFileListnull.txt
