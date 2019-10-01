@@ -4,7 +4,7 @@
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-		<MediaTemplate />
+		<MediaTemplate EmbedCab="yes"/>
 
 		<Feature Id="ProductFeature" Title="simple_installer" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
@@ -32,7 +32,7 @@
 				<!-- TODO: Insert files, registry keys, and other resources here. -->
 			<!-- </Component> -->
       <Component Id="ProductComponentFiles" Guid="{C2232037-F8FB-4A2C-B62B-4E541D4AFD15}">
-        <File Source="example.exe"/>
+        <File Source="Files\example.exe"/>
       </Component>
 		</ComponentGroup>
 	</Fragment>
@@ -46,9 +46,9 @@
       <Component Id="ApplicationShortcutFiles" Guid="{D6444429-20F4-4959-9AC3-4D36A573F9D1}">
         <Shortcut 
           Id="ApplicationShortcutFile1" 
-          Name="ApplicationShortcut" 
+          Name="Example" 
           Description="My Application Shortcut Description"
-          Target="[INSTALLDIR]example.exe" 
+          Target="[INSTALLFOLDER]example.exe" 
           WorkingDirectory="INSTALLDIR"/>
       <RegistryValue 
         Root="HKCU" 
