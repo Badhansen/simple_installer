@@ -9,6 +9,7 @@
 		<Feature Id="ProductFeature" Title="simple_installer" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
       <ComponentGroupRef Id="ApplicationShortcuts"/>
+      <ComponentGroupRef Id="DesktopShortcuts"/>
 		</Feature>
 	</Product>
 
@@ -17,7 +18,10 @@
 			<Directory Id="ProgramFilesFolder">
 				<Directory Id="INSTALLFOLDER" Name="Example" />
 			</Directory>
-    
+      
+      <!--Creating Desktop icon-->
+      <Directory Id="DesktopFolder" Name="Desktop"/>
+      
       <!-- Creating Program Menu Folder -->
       <Directory Id="ProgramMenuFolder">
         <Directory Id="ProgramMenuSubfolder" Name="Example"/>
@@ -61,5 +65,29 @@
       </Component>
 		</ComponentGroup>
 	</Fragment>
-
+  
+  <Fragment>
+    <ComponentGroup Id="DesktopShortcuts" Directory="DesktopFolder">
+      <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+      <!-- <Component Id="ProductComponent"> -->
+      <!-- TODO: Insert files, registry keys, and other resources here. -->
+      <!-- </Component> -->
+      <Component Id="DesktopShortcutFiles" Guid="{6847A68F-F1B0-4263-AD1A-539CA0739A43}">
+        <Shortcut
+          Id="DesktopShortcutFile1"
+          Name="Example"
+          Description="My Application Desktop Shortcut Description"
+          Target="[INSTALLFOLDER]example.exe"
+          WorkingDirectory="INSTALLDIR"/>
+        <RegistryValue
+          Root="HKCU"
+          Key="Software\Badhan Sen\Example"
+          Name="installed"
+          Type="integer"
+          Value="1"
+          KeyPath="yes" />
+        <RemoveFolder Id="DesktopFolder"  On="uninstall"/>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
 </Wix>
